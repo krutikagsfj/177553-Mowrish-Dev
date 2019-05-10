@@ -1,0 +1,49 @@
+<div class="container my-3">
+  <p>Welcome to Capgemini : 177553</p>
+  <hr>
+  <h3>Welcome to GameCity: Experience the Online Gaming Experience</h3><br>
+  <!-- Neglecting the html validation -->
+  <form [formGroup]="cardForm" novalidate>
+    <table>
+      <tr>
+        <td>
+          <label for="name">Name : </label>
+        </td>
+        <td class="wid">
+          <input type="text" id="name" formControlName="name">
+        </td>
+        <td *ngIf="cardForm.get('name').hasError('required') && cardForm.get('name').touched">Mandatory Field</td>
+        <td *ngIf="cardForm.get('name').hasError('pattern')">Name can contain only characters</td>
+      </tr>
+      <tr>
+        <td>
+          <label for="address">Address : </label>
+        </td>
+        <td class="wid">
+          <input type="text" id="address" formControlName="address">
+        </td>
+        <td *ngIf="cardForm.get('address').hasError('required') && cardForm.get('address').touched">Mandatory Field</td>
+      </tr>
+      <tr>
+        <td>
+          <label for="amountToPay">Amount To Pay : </label>
+        </td>
+        <td class="wid">
+          <input type="text" id="amountToPay" formControlName="amountToPay">
+        </td>
+        <td *ngIf="cardForm.get('amountToPay').hasError('required') && cardForm.get('amountToPay').touched">Mandatory Field</td>
+        <td *ngIf="cardForm.get('amountToPay').hasError('pattern')">The amount entered should be numeric value</td>
+      </tr>
+      <tr>
+        <td>
+          <button type="button" [disabled]="cardForm.invalid" (click)="onClick()">Buy Card</button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="6">
+          <p>Note : 100 Rs will be deducted for service charge</p>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>

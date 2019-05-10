@@ -1,0 +1,13 @@
+<div class="container my-3">
+  <h4 class="mb-5">Welcome to GameCity! Your Card Balance Amount is Rs {{balanceAmount}}</h4>
+  <div class="container-fluid">
+    <table>
+      <tr *ngFor="let game of gameList">
+        <td>{{game.game_id}})</td>
+        <td>{{game.game_name}}</td>
+        <td>Rs {{game.game_amount}}</td>
+        <td><a [routerLink]="" (click)="play(game.game_amount)">PlayNow</a></td>
+      </tr>
+    </table>
+  </div>
+</div>

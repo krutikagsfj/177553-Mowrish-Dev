@@ -1,0 +1,4 @@
+td:not(:first-child) {
+    width: 150px;
+    height: 40px;
+}

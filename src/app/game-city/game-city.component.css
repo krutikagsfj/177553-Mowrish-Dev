@@ -1,0 +1,17 @@
+p:not(:last-child) {
+    padding: 10px;
+    border: none;
+    border-top: 1px dotted black;
+    border-bottom: 1px dotted black;
+}
+
+hr {
+    border: none;
+    height: 5px;
+    background-color: black;
+}
+
+.wid {
+    width: 300px;
+    overflow: hidden;
+}
